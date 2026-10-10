@@ -47,6 +47,24 @@ Open [http://localhost:8000](http://localhost:8000). API documentation is availa
 
 The seed command creates a deterministic synthetic catalog. Re-running it with the same seed produces the same products and embeddings.
 
+## Deploy on Vercel
+
+Vercel can run the FastAPI application, but it cannot run the PostgreSQL container from
+`compose.yaml`. Connect the project to a hosted PostgreSQL provider with pgvector support
+(for example, Neon or Supabase), then add its pooled connection string as `DATABASE_URL` in
+the Vercel project settings for Production and Preview.
+
+Initialize and seed that hosted database once from a trusted machine:
+
+```bash
+psql "$DATABASE_URL" -f db/init.sql
+DATABASE_URL="$DATABASE_URL" python scripts/seed.py --count 50000 --replace
+```
+
+Redeploy after adding or changing the environment variable. Without `DATABASE_URL`, the
+web interface still loads and the health endpoint reports a configuration error, but search
+remains unavailable because all three query plans require PostgreSQL and pgvector.
+
 ## Run the experiment
 
 After seeding the database:

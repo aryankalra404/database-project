@@ -1,5 +1,6 @@
 import hashlib
 import json
+import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -23,12 +24,24 @@ planner = AdaptivePlanner(
     exploration_rate=settings.planner_exploration_rate,
 )
 
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
-async def lifespan(_: FastAPI):
-    await repository.open()
+async def lifespan(runtime_app: FastAPI):
+    runtime_app.state.database_ready = False
+    try:
+        await repository.open()
+        runtime_app.state.database_ready = True
+    except Exception:
+        # Keep the interface available when a deployment has not been connected
+        # to PostgreSQL yet. Database-backed endpoints return an actionable 503.
+        logger.exception("PostgreSQL connection failed during application startup")
+
     yield
-    await repository.close()
+
+    if runtime_app.state.database_ready:
+        await repository.close()
 
 
 app = FastAPI(
@@ -42,6 +55,17 @@ static_dir = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 
+def require_database() -> None:
+    if not getattr(app.state, "database_ready", False):
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Database is not configured. Set DATABASE_URL to a hosted PostgreSQL "
+                "database with pgvector, then redeploy."
+            ),
+        )
+
+
 @app.get("/", include_in_schema=False)
 async def home() -> FileResponse:
     return FileResponse(static_dir / "index.html")
@@ -49,6 +73,7 @@ async def home() -> FileResponse:
 
 @app.get("/api/health", response_model=HealthResponse)
 async def health() -> HealthResponse:
+    require_database()
     try:
         _, count = await repository.health()
     except Exception as exc:
@@ -58,6 +83,7 @@ async def health() -> HealthResponse:
 
 @app.post("/api/search", response_model=SearchResponse)
 async def search(request: SearchRequest) -> SearchResponse:
+    require_database()
     total_rows = max(await repository.total_rows(), 1)
     selectivity = await repository.estimate_selectivity(request.filters, total_rows)
     candidate_budget = calculate_candidate_budget(
@@ -129,4 +155,5 @@ async def search(request: SearchRequest) -> SearchResponse:
 
 @app.get("/api/planner/summary")
 async def planner_summary() -> list[dict[str, object]]:
+    require_database()
     return await repository.planner_summary()
