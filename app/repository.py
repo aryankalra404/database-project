@@ -97,7 +97,7 @@ class ProductRepository:
     async def load_observations(self, limit: int = 1_000) -> list[PlannerObservation]:
         statement = """
             SELECT strategy, estimated_selectivity, requested_k, predicate_count,
-                   candidate_budget, latency_ms, result_count,
+                   candidate_budget, latency_ms, result_count, recall_at_k,
                    (SELECT greatest(reltuples::bigint, 0)
                     FROM pg_class WHERE oid = 'products'::regclass) AS total_rows
             FROM query_observations
@@ -120,6 +120,7 @@ class ProductRepository:
                 ),
                 latency_ms=float(row["latency_ms"]),
                 result_count=int(row["result_count"]),
+                recall_at_k=(float(row["recall_at_k"]) if row["recall_at_k"] is not None else None),
             )
             for row in rows
         ]

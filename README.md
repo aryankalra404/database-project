@@ -66,6 +66,19 @@ The benchmark runner executes the same workload using all three strategies. Exac
 
 Run the workload once to populate observations, then run it again to evaluate the learned planner through the search API. The raw strategy benchmark intentionally records every execution so each plan has enough training examples.
 
+## Validated local results
+
+The first reproducible run used PostgreSQL 17, pgvector 0.8.7, 50,000 synthetic products, hash embeddings, ten workload queries, `k = 10`, and five repetitions per condition. Recall is tie-aware because the generated catalog contains products with equal cosine distances.
+
+| Method | Mean latency | Mean recall at 10 | Full result rate |
+| --- | ---: | ---: | ---: |
+| Exact pre-filter | 18.21 ms | 1.00 | 1.00 |
+| ANN post-filter | 0.63 ms | 0.56 | 0.70 |
+| Iterative HNSW | 0.87 ms | 0.81 | 1.00 |
+| Full adaptive planner | 6.42 ms | 1.00 | 1.00 |
+
+The adaptive planner was 2.83 times faster than exact search at the same mean recall. Removing workload feedback reduced recall to 0.81. Removing selectivity reduced recall to 0.89 and increased mean latency to 7.02 ms. The fixed-budget and no-guard variants matched the full system on this stable workload because the learned planner avoided incomplete plans; these safeguards require a shifted or exploratory workload to measure their effect.
+
 ## Local development
 
 PostgreSQL with pgvector must be running separately for API or integration tests.
@@ -112,7 +125,7 @@ Set `strategy` to `exact_prefilter`, `ann_postfilter`, or `ann_iterative` to byp
 
 ## Planner learning
 
-The cold-start policy uses transparent selectivity thresholds. After every strategy has enough observations, SAHVS fits one ridge-regression cost model per strategy. The target is measured latency with a large penalty for incomplete result sets. Ten percent of requests are exploration samples by default, preventing the planner from relying indefinitely on stale measurements.
+The cold-start policy uses transparent selectivity thresholds. After every strategy has enough observations, SAHVS estimates each plan's cost from the five closest observed query contexts. The cost combines measured latency with penalties for incomplete results and benchmark-measured recall below 0.95. Ten percent of requests are exploration samples by default, preventing the planner from relying indefinitely on stale measurements.
 
 This design supports the planned ablation study:
 

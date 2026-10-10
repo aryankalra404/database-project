@@ -1,0 +1,30 @@
+{
+  "configuration": {
+    "k": 10,
+    "repetitions": 5,
+    "output": "results"
+  },
+  "summary": {
+    "exact_prefilter": {
+      "mean_latency_ms": 18.205690919421613,
+      "median_latency_ms": 14.957187493564561,
+      "p95_latency_ms": 30.280000006314367,
+      "mean_recall_at_k": 1.0,
+      "full_result_rate": 1.0
+    },
+    "ann_postfilter": {
+      "mean_latency_ms": 0.6274616596056148,
+      "median_latency_ms": 0.5373544991016388,
+      "p95_latency_ms": 1.0761659941636026,
+      "mean_recall_at_k": 0.56,
+      "full_result_rate": 0.7
+    },
+    "ann_iterative": {
+      "mean_latency_ms": 0.8709442365216091,
+      "median_latency_ms": 0.7062084914650768,
+      "p95_latency_ms": 1.719375024549663,
+      "mean_recall_at_k": 0.81,
+      "full_result_rate": 1.0
+    }
+  }
+}

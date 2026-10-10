@@ -38,7 +38,7 @@ async def execute_variant(
     filters,
     k: int,
     total_rows: int,
-    truth_ids: list[int],
+    truth_rows: list[dict],
 ) -> tuple[StrategyName, float, list[dict], bool]:
     selectivity = await repository.estimate_selectivity(filters, total_rows)
     dynamic_budget = calculate_candidate_budget(k, selectivity, total_rows)
@@ -68,7 +68,7 @@ async def execute_variant(
     rows = result.rows
     latency_ms = result.latency_ms
     fallback_used = False
-    expected_results = min(k, len(truth_ids))
+    expected_results = min(k, len(truth_rows))
     if (
         use_guard
         and len(rows) < expected_results
@@ -122,8 +122,6 @@ async def run(args: argparse.Namespace) -> None:
             truth = await repository.search(
                 StrategyName.EXACT_PREFILTER, filters, vector, args.k, budget
             )
-            truth_ids = [row["id"] for row in truth.rows]
-
             for variant in variants:
                 for _ in range(args.repetitions):
                     strategy, latency, rows, fallback_used = await execute_variant(
@@ -135,16 +133,15 @@ async def run(args: argparse.Namespace) -> None:
                         filters,
                         args.k,
                         total_rows,
-                        truth_ids,
+                        truth.rows,
                     )
-                    ids = [row["id"] for row in rows]
                     measurements.append(
                         AblationMeasurement(
                             variant,
                             query_number,
                             strategy.value,
                             latency,
-                            recall_at_k(ids, truth_ids),
+                            recall_at_k(rows, truth.rows),
                             len(rows),
                             fallback_used,
                         )

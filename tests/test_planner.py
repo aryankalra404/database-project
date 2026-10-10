@@ -57,3 +57,20 @@ def test_incomplete_results_receive_a_training_penalty() -> None:
     planner = AdaptivePlanner(minimum_observations=4, exploration_rate=0)
     decision = planner.choose(target, complete + incomplete + exact)
     assert decision.strategy == StrategyName.ANN_ITERATIVE
+
+
+def test_low_recall_receives_a_training_penalty() -> None:
+    target = features(0.10)
+    low_recall = [
+        PlannerObservation(StrategyName.ANN_POSTFILTER, target, 1.0, 10, 0.2) for _ in range(4)
+    ]
+    high_recall = [
+        PlannerObservation(StrategyName.ANN_ITERATIVE, target, 8.0, 10, 1.0) for _ in range(4)
+    ]
+    exact = [
+        PlannerObservation(StrategyName.EXACT_PREFILTER, target, 60.0, 10, 1.0) for _ in range(4)
+    ]
+
+    planner = AdaptivePlanner(minimum_observations=4, exploration_rate=0)
+    decision = planner.choose(target, low_recall + high_recall + exact)
+    assert decision.strategy == StrategyName.ANN_ITERATIVE

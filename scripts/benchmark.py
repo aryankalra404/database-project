@@ -44,10 +44,16 @@ class Measurement:
     recall_at_k: float
 
 
-def recall_at_k(result_ids: list[int], truth_ids: list[int]) -> float:
-    if not truth_ids:
+def recall_at_k(result_rows: list[dict], truth_rows: list[dict]) -> float:
+    """Return tie-aware recall using the exact kth distance as the boundary."""
+    if not truth_rows:
         return 1.0
-    return len(set(result_ids) & set(truth_ids)) / len(truth_ids)
+    threshold = max(float(row["distance"]) for row in truth_rows)
+    tolerance = 1e-7
+    relevant = sum(
+        float(row["distance"]) <= threshold + tolerance for row in result_rows[: len(truth_rows)]
+    )
+    return min(1.0, relevant / len(truth_rows))
 
 
 async def run(args: argparse.Namespace) -> None:
@@ -72,13 +78,10 @@ async def run(args: argparse.Namespace) -> None:
             truth = await repository.search(
                 StrategyName.EXACT_PREFILTER, filters, vector, args.k, budget
             )
-            truth_ids = [row["id"] for row in truth.rows]
-
             for strategy in StrategyName:
                 for repetition in range(1, args.repetitions + 1):
                     result = await repository.search(strategy, filters, vector, args.k, budget)
-                    result_ids = [row["id"] for row in result.rows]
-                    recall = recall_at_k(result_ids, truth_ids)
+                    recall = recall_at_k(result.rows, truth.rows)
                     measurement = Measurement(
                         query_number=query_number,
                         strategy=strategy.value,

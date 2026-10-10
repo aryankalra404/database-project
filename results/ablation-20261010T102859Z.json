@@ -1,0 +1,2292 @@
+{
+  "configuration": {
+    "k": 10,
+    "repetitions": 5,
+    "minimum_observations": 8,
+    "output": "results"
+  },
+  "summary": {
+    "full": {
+      "mean_latency_ms": 6.424922422156669,
+      "mean_recall_at_k": 1.0,
+      "full_result_rate": 1.0,
+      "fallback_rate": 0.0
+    },
+    "no_feedback": {
+      "mean_latency_ms": 2.273097559227608,
+      "mean_recall_at_k": 0.81,
+      "full_result_rate": 1.0,
+      "fallback_rate": 0.1
+    },
+    "no_selectivity": {
+      "mean_latency_ms": 7.0152965997112915,
+      "mean_recall_at_k": 0.89,
+      "full_result_rate": 1.0,
+      "fallback_rate": 0.3
+    },
+    "fixed_candidate_budget": {
+      "mean_latency_ms": 6.4053658419288695,
+      "mean_recall_at_k": 1.0,
+      "full_result_rate": 1.0,
+      "fallback_rate": 0.0
+    },
+    "no_recall_guard": {
+      "mean_latency_ms": 6.367238337406889,
+      "mean_recall_at_k": 1.0,
+      "full_result_rate": 1.0,
+      "fallback_rate": 0.0
+    }
+  },
+  "measurements": [
+    {
+      "variant": "full",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.8914590182248503,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0752080124802887,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9321660036221147,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9835000091698021,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.1822500091511756,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0415410215500742,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8999999845400453,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8350000134669244,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8942080021370202,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.135083002736792,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 1,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6979579920880497,
+      "recall_at_k": 0.9,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 1,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6648339913226664,
+      "recall_at_k": 0.9,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 1,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6248750141821802,
+      "recall_at_k": 0.9,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 1,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5711669800803065,
+      "recall_at_k": 0.9,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 1,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5807920242659748,
+      "recall_at_k": 0.9,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7907919934950769,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7330419903155416,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7493330049328506,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7591670146211982,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8170420187525451,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8981669961940497,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8384580141864717,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9173750004265457,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.008708990411833,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 1,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8461249817628413,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 12.686540983850136,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.873957992065698,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.972917011007667,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 12.0311250211671,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.530165997100994,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 2,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.3807080104015768,
+      "recall_at_k": 0.8,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 2,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7663750147912651,
+      "recall_at_k": 0.8,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 2,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7778330182190984,
+      "recall_at_k": 0.8,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 2,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9226670081261545,
+      "recall_at_k": 0.8,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 2,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8414170006290078,
+      "recall_at_k": 0.8,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 2,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.060749984811991,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 2,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.299709022045135,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 2,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.666248978348449,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 2,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.501917022746056,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 2,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.337541003944352,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.546749999979511,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.243125016335398,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.561541992705315,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.299791018245742,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.383917008060962,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.688124999636784,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.791333003202453,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.531916999956593,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.489500000607222,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 2,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 11.817999999038875,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 1.0899580083787441,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6039580039214343,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5983340088278055,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5705830117221922,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5761249922215939,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 3,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8181250013876706,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 3,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.722791999578476,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 3,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7378750015050173,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 3,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7934589812066406,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 3,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7949159771669656,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6532080005854368,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5591670051217079,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.593625009059906,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.7259580015670508,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5867909931112081,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5883340199943632,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5667080113198608,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.6125000072643161,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5468750023283064,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5752499855589122,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5443340050987899,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5531659990083426,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5611249944195151,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5684579955413938,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 3,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5777910118922591,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.1459169909358025,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6532920233439654,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6556669832207263,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6394159863702953,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.778916000854224,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.7891250133980066,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6621250067837536,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6453329988289624,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6329579919110984,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6266249984037131,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 4,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5388749996200204,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 4,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5116669926792383,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 4,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5021670076530427,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 4,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4892910073976964,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 4,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4877909959759563,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6335829966701567,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6727080035489053,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6613330042455345,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.5905840080231428,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6367909954860806,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.633040996035561,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6734170019626617,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.662042002659291,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6261669914238155,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 4,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.6002500012982637,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.126416983548552,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 14.69149999320507,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 14.790375018492341,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.485250012716278,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 14.81074999901466,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 5,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.2731669994536787,
+      "recall_at_k": 0.3,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 5,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9034160175360739,
+      "recall_at_k": 0.3,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 5,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0228329920209944,
+      "recall_at_k": 0.3,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 5,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9004579915199429,
+      "recall_at_k": 0.3,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 5,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8138330013025552,
+      "recall_at_k": 0.3,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 5,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5093750078231096,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 5,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.454249995527789,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 5,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.45095800305716693,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 5,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.45487500028684735,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 5,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.43466698843985796,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.163209027377889,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.024833002826199,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.45883301878348,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.21841698559001,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.307083987863734,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.416708978591487,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.373083995655179,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 15.106209000805393,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 14.813082991167903,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 5,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 14.750665985047817,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.53404101729393,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0429579997435212,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9117920126300305,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9163749928120524,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9307909931521863,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 16.68000002973713,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 16.144916997291148,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.642082988051698,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.386625978862867,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.448958962224424,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.67325001815334,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.507832984440029,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.627707995008677,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.757999004563317,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 6,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 15.687999984947965,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.324792014202103,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9578750177752227,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9310829918831587,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8717500022612512,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8894159982446581,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8733750146348029,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0268329933751374,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.9008339839056134,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8506669837515801,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 6,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 0.8573330123908818,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.840542012359947,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.153958000941202,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.2774589995387942,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.3675000227522105,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.2030420184601098,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.091583981178701,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0520829819142818,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0476669995114207,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.0369590017944574,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 1.151833013864234,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 7,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.306208984227851,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 7,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 12.392417032970116,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 7,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 9.786165988771245,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 7,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 4.2345419933553785,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 7,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 3.721667017089203,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": true
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 2.9483329853974283,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.3605829812586308,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.1639170192647725,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.1857079884503037,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 2.9858750058338046,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.148999996483326,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 2.8272499912418425,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.0650840199086815,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 3.01333301467821,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 7,
+      "selected_strategy": "ann_iterative",
+      "latency_ms": 2.854749996913597,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.790167017839849,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5144159949850291,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5053750064689666,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5123330047354102,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.49916599527932703,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5619580042548478,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.46912499237805605,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.45654200948774815,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.523374998010695,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.47974998597055674,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5040830001235008,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4872499848715961,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.46370801283046603,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4863330104853958,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4739590222015977,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.49799997941590846,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5330830172169954,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5935000081080943,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4701669968198985,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.46645800466649234,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4745420010294765,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4583330010063946,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.49775000661611557,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4886249953415245,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 8,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4809160018339753,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5057920061517507,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.38220800342969596,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.403957994421944,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.35104199196211994,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.36429197643883526,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4044590168632567,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.33108401112258434,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.33179199090227485,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.33795900526456535,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.33579199225641787,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3832079819403589,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3655829932540655,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3955000138375908,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3368329780641943,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.34995799069292843,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.30995800625532866,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.32795799779705703,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3574170114006847,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.4403339989949018,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3621669893618673,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3525829815771431,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3477080026641488,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3491670067887753,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.3577499883249402,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 9,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.33941600122489035,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.595999986166134,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.19858299032785,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.071458011865616,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.33749999688007,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "full",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.659624986583367,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 10,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.9409589983988553,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 10,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5778750055469573,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 10,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5329999839887023,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 10,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5228329973760992,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_feedback",
+      "query_number": 10,
+      "selected_strategy": "ann_postfilter",
+      "latency_ms": 0.5337919865269214,
+      "recall_at_k": 0.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.338792003225535,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.307625012937933,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.360582983121276,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.389249994186684,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_selectivity",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.467916978523135,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 31.52295801555738,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.946416984079406,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.46074998565018,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 29.430957976728678,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "fixed_candidate_budget",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 29.787292005494237,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.232374992920086,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.72787498240359,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 29.599000001326203,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 29.924374975962564,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    },
+    {
+      "variant": "no_recall_guard",
+      "query_number": 10,
+      "selected_strategy": "exact_prefilter",
+      "latency_ms": 30.025791988009587,
+      "recall_at_k": 1.0,
+      "result_count": 10,
+      "fallback_used": false
+    }
+  ]
+}

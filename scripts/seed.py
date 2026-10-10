@@ -48,7 +48,7 @@ COLORS = ["black", "silver", "blue", "white", "graphite", "green"]
 MATERIALS = ["aluminium", "recycled plastic", "steel", "soft-touch polymer"]
 
 
-def make_product(index: int, rng: random.Random) -> tuple[str, ... | float | bool]:
+def make_product(index: int, rng: random.Random) -> tuple[str | float | bool, ...]:
     category = rng.choice(list(CATALOG))
     details = CATALOG[category]
     brand = rng.choice(details["brands"])

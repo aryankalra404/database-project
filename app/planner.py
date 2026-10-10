@@ -40,6 +40,7 @@ class PlannerObservation:
     features: QueryFeatures
     latency_ms: float
     result_count: int
+    recall_at_k: float | None = None
 
 
 @dataclass(frozen=True)
@@ -50,7 +51,7 @@ class PlanDecision:
 
 
 class AdaptivePlanner:
-    """Per-strategy ridge models with a safe heuristic cold start."""
+    """Local per-strategy cost models with a safe heuristic cold start."""
 
     def __init__(
         self,
@@ -100,24 +101,25 @@ class AdaptivePlanner:
         latency = predictions[strategy]
         return PlanDecision(
             strategy,
-            f"The learned cost model predicted the lowest latency at {latency:.2f} ms",
+            f"The learned model predicted the lowest recall-adjusted cost at {latency:.2f}",
             latency,
         )
 
     @staticmethod
     def _predict(features: QueryFeatures, observations: list[PlannerObservation]) -> float:
-        x = np.vstack([item.features.as_vector() for item in observations])
-        y = np.array(
-            [
-                item.latency_ms
-                + (1_000.0 if item.result_count < item.features.requested_k else 0.0)
-                for item in observations
-            ]
-        )
-        regularization = np.eye(x.shape[1]) * 0.1
-        regularization[0, 0] = 0.0
-        weights = np.linalg.solve(x.T @ x + regularization, x.T @ y)
-        return max(0.0, float(features.as_vector() @ weights))
+        target = features.as_vector()
+        nearest = sorted(
+            observations,
+            key=lambda item: float(np.linalg.norm(target - item.features.as_vector())),
+        )[:5]
+        costs = []
+        for item in nearest:
+            incomplete_penalty = 1_000.0 if item.result_count < item.features.requested_k else 0.0
+            recall_penalty = (
+                100.0 * max(0.0, 0.95 - item.recall_at_k) if item.recall_at_k is not None else 0.0
+            )
+            costs.append(item.latency_ms + incomplete_penalty + recall_penalty)
+        return float(np.mean(costs))
 
 
 def calculate_candidate_budget(
