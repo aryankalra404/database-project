@@ -169,4 +169,3 @@ class ProductRepository:
             async with connection.cursor() as cursor:
                 await cursor.execute(statement)
                 return await cursor.fetchall()
-

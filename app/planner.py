@@ -126,4 +126,3 @@ def calculate_candidate_budget(
     selectivity = max(selectivity, 1.0 / max(total_rows, 1))
     expected = math.ceil((k / selectivity) * 1.25)
     return min(total_rows, max(k * multiplier, expected))
-

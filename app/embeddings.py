@@ -6,7 +6,6 @@ from typing import Protocol
 
 import numpy as np
 
-
 TOKEN_PATTERN = re.compile(r"[a-z0-9]+")
 
 # The zero-download provider maps a few product-search synonyms together. It is
@@ -67,18 +66,14 @@ class SentenceTransformerEmbedder:
         try:
             from sentence_transformers import SentenceTransformer
         except ImportError as exc:
-            raise RuntimeError(
-                "Install the ML dependencies with `pip install -e '.[ml]'`"
-            ) from exc
+            raise RuntimeError("Install the ML dependencies with `pip install -e '.[ml]'`") from exc
         self.model = SentenceTransformer(model_name)
         self.dimensions = dimensions
 
     def encode(self, text: str) -> list[float]:
         vector = self.model.encode(text, normalize_embeddings=True)
         if len(vector) != self.dimensions:
-            raise ValueError(
-                f"Model returned {len(vector)} dimensions; expected {self.dimensions}"
-            )
+            raise ValueError(f"Model returned {len(vector)} dimensions; expected {self.dimensions}")
         return vector.astype(np.float32).tolist()
 
 
@@ -92,4 +87,3 @@ def create_embedder(provider: str, model_name: str, dimensions: int) -> Embedder
 
 def to_pgvector(vector: list[float]) -> str:
     return "[" + ",".join(f"{value:.8f}" for value in vector) + "]"
-

@@ -88,4 +88,3 @@ def build_search_query(
         raise ValueError(f"Unsupported strategy: {strategy}")
 
     return BuiltQuery("\n".join(line.strip() for line in statement.splitlines()), parameters)
-

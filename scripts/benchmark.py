@@ -17,7 +17,6 @@ from app.models import ProductFilters, StrategyName
 from app.planner import QueryFeatures, calculate_candidate_budget
 from app.repository import ProductRepository
 
-
 WORKLOAD = [
     ("lightweight modern laptop", ProductFilters(category="Laptops", max_price=70000)),
     ("budget phone with long battery", ProductFilters(category="Phones", max_price=25000)),
@@ -52,9 +51,7 @@ def recall_at_k(result_ids: list[int], truth_ids: list[int]) -> float:
 
 
 async def run(args: argparse.Namespace) -> None:
-    database_url = os.getenv(
-        "DATABASE_URL", "postgresql://sahvs:sahvs@localhost:5432/sahvs"
-    )
+    database_url = os.getenv("DATABASE_URL", "postgresql://sahvs:sahvs@localhost:5432/sahvs")
     repository = ProductRepository(database_url)
     embedder = HashingEmbedder()
     measurements: list[Measurement] = []
@@ -142,4 +139,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

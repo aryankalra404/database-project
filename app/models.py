@@ -67,4 +67,3 @@ class HealthResponse(BaseModel):
     status: str
     database: str
     product_count: int
-

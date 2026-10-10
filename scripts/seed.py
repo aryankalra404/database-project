@@ -11,7 +11,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.embeddings import HashingEmbedder, SentenceTransformerEmbedder, to_pgvector
 
-
 CATALOG = {
     "Laptops": {
         "brands": ["Aster", "Nova", "Orbit", "Vertex"],
@@ -87,9 +86,7 @@ def main() -> None:
     parser.add_argument("--replace", action="store_true")
     args = parser.parse_args()
 
-    database_url = os.getenv(
-        "DATABASE_URL", "postgresql://sahvs:sahvs@localhost:5432/sahvs"
-    )
+    database_url = os.getenv("DATABASE_URL", "postgresql://sahvs:sahvs@localhost:5432/sahvs")
     provider = os.getenv("EMBEDDING_PROVIDER", "hash")
     if provider == "sentence-transformers":
         embedder = SentenceTransformerEmbedder(
@@ -134,4 +131,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -13,7 +13,6 @@ from app.models import HealthResponse, ProductResult, SearchRequest, SearchRespo
 from app.planner import AdaptivePlanner, QueryFeatures, calculate_candidate_budget
 from app.repository import ProductRepository
 
-
 settings = get_settings()
 repository = ProductRepository(settings.database_url)
 embedder = create_embedder(
@@ -131,4 +130,3 @@ async def search(request: SearchRequest) -> SearchResponse:
 @app.get("/api/planner/summary")
 async def planner_summary() -> list[dict[str, object]]:
     return await repository.planner_summary()
-

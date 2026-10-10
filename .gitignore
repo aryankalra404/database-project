@@ -1,5 +1,7 @@
 .env
+.DS_Store
 .venv/
+*.egg-info/
 __pycache__/
 .pytest_cache/
 .ruff_cache/
@@ -7,4 +9,3 @@ __pycache__/
 results/*.csv
 results/*.json
 !results/.gitkeep
-
