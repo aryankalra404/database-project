@@ -23,10 +23,11 @@ services:
       EMBEDDING_PROVIDER: hash
     ports:
       - "8000:8000"
+    volumes:
+      - ./results:/app/results
     depends_on:
       database:
         condition: service_healthy
 
 volumes:
   postgres_data:
-
