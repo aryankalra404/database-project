@@ -1,6 +1,7 @@
 import hashlib
 import json
 import logging
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -30,13 +31,17 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(runtime_app: FastAPI):
     runtime_app.state.database_ready = False
-    try:
-        await repository.open()
-        runtime_app.state.database_ready = True
-    except Exception:
-        # Keep the interface available when a deployment has not been connected
-        # to PostgreSQL yet. Database-backed endpoints return an actionable 503.
-        logger.exception("PostgreSQL connection failed during application startup")
+    database_configured = not os.getenv("VERCEL") or bool(os.getenv("DATABASE_URL"))
+    if database_configured:
+        try:
+            await repository.open()
+            runtime_app.state.database_ready = True
+        except Exception:
+            # Keep the interface available when a deployment has not been connected
+            # to PostgreSQL yet. Database-backed endpoints return an actionable 503.
+            logger.exception("PostgreSQL connection failed during application startup")
+    else:
+        logger.warning("DATABASE_URL is not configured; database features are disabled")
 
     yield
 
