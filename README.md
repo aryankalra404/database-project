@@ -53,9 +53,10 @@ After seeding the database:
 
 ```bash
 docker compose exec api python scripts/benchmark.py --repetitions 5
+docker compose exec api python scripts/ablation.py --repetitions 5
 ```
 
-The runner executes the same workload using all three strategies. Exact pre-filtering supplies the ground-truth top-k set. Timestamped CSV and JSON files are written to `results/` with:
+The benchmark runner executes the same workload using all three strategies. Exact pre-filtering supplies the ground-truth top-k set. The ablation runner then evaluates the full system against versions without feedback, selectivity, dynamic candidate sizing, or the recall guard. Timestamped CSV and JSON files are written to `results/` with:
 
 - mean, median, and p95 query latency;
 - recall at k against exact search;
@@ -134,10 +135,10 @@ app/
 db/init.sql          schema, constraints, B-tree indexes, and HNSW index
 scripts/seed.py      reproducible product generator
 scripts/benchmark.py baseline and recall experiment runner
+scripts/ablation.py  component-removal experiment runner
 tests/               unit tests for planner, SQL, models, and embeddings
 ```
 
 ## Current limitation
 
 The exact, post-filter, and iterative-HNSW paths require PostgreSQL with pgvector. Unit tests can run without a live database, but latency and recall results must be produced on one fixed machine with Docker or a local PostgreSQL installation. No benchmark numbers are hard-coded into the project.
-
